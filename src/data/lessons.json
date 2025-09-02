@@ -1,0 +1,334 @@
+[
+  {
+    "id": 1,
+    "title": "What is Git?",
+    "xp": 100,
+    "intro": "Welcome to the Git basics lesson.",
+    "explanation": "Git helps developers track and collaborate on code changes.",
+    "stages": [
+        {
+            "label": "Multiple Choice Quiz",
+            "type": "multiple",
+            "questions": [
+                {
+                    "text": "What is Git?",
+                    "options": ["A programming language", "A version control system", "A design tool", "An operating system"],
+                    "answer": "A version control system",
+                    "hint": "It's used to track changes in code.",
+                    "explanation": "Git is a version control system that helps you manage and track changes to code over time."
+                },
+                {
+                    "text": "Why is Git useful for developers?",
+                    "options": ["It sends emails", "It tracks changes in code", "It optimizes performance", "It runs your application"],
+                    "answer": "It tracks changes in code",
+                    "hint": "Developers need to manage versions of their code.",
+                    "explanation": "Git tracks versions of your files, so you can go back to earlier code and collaborate safely."
+                },
+                {
+                    "text": "Which of the following is NOT true about Git?",
+                    "options": ["It's distributed", "It’s used to collaborate", "It requires an internet connection to work", "It tracks changes"],
+                    "answer": "It requires an internet connection to work",
+                    "hint": "Git works offline!",
+                    "explanation": "Git works locally — you don’t need to be online to use it."
+                },
+                {
+                    "text": "Which of the following is a Git command?",
+                    "options": ["save-project", "git init", "project start", "create-repo"],
+                    "answer": "git init",
+                    "hint": "Git commands usually start with 'git'.",
+                    "explanation": "`git init` creates a new Git repository in your current folder."
+                },
+                {
+                    "text": "What does a Git commit do?",
+                    "options": ["Deletes a file", "Saves changes with a message", "Uploads to the internet", "Formats the code"],
+                    "answer": "Saves changes with a message",
+                    "hint": "Think of it like saving your game.",
+                    "explanation": "A commit saves your current work and includes a message describing the change."
+                },
+                {
+                    "text": "Which command shows the status of your files in Git?",
+                    "options": ["git check", "git status", "git verify", "git log"],
+                    "answer": "git status",
+                    "hint": "This command tells you what's changed and what’s staged.",
+                    "explanation": "`git status` gives information about modified and staged files."
+                },
+                {
+                    "text": "Which command saves your changes in Git permanently?",
+                    "options": ["git push", "git commit", "git add", "git store"],
+                    "answer": "git commit",
+                    "hint": "Think of it as a journal entry.",
+                    "explanation": "A `git commit` records a snapshot of your project history."
+                },
+                {
+                    "text": "Which command shows a history of your commits?",
+                    "options": ["git show", "git history", "git log", "git track"],
+                    "answer": "git log",
+                    "hint": "It logs all your changes.",
+                    "explanation": "`git log` displays a list of your past commits."
+                },
+                {
+                    "text": "What does `git add` do?",
+                    "options": ["Removes a file", "Stages changes for commit", "Commits changes", "Pushes changes to remote"],
+                    "answer": "Stages changes for commit",
+                    "hint": "This prepares changes to be saved.",
+                    "explanation": "`git add` stages files so they can be included in the next commit."
+                },
+                {
+                    "text": "Which Git command creates a new branch?",
+                    "options": ["git start", "git fork", "git branch", "git new"],
+                    "answer": "git branch",
+                    "hint": "Branches allow you to work on features separately.",
+                    "explanation": "`git branch` creates a new line of development in your project."
+                }
+            ]
+        },
+        {
+            "label": "True or False Quiz",
+            "type": "truefalse",
+            "questions": [
+                { "text": "Git was created by the same person who created Linux.", "answer": true, "hint": "His name is Linus Torvalds.", "explanation": "Linus Torvalds, the creator of Linux, also created Git in 2005." },
+                { "text": "Git requires an internet connection to commit changes.", "answer": false, "hint": "Git works locally.", "explanation": "Git can commit changes offline." },
+                { "text": "The `git init` command starts a new Git repository.", "answer": true, "hint": "Init stands for initialize.", "explanation": "`git init` sets up version control in a folder." },
+                { "text": "A commit in Git automatically pushes changes to GitHub.", "answer": false, "hint": "You still need to push manually.", "explanation": "A commit saves changes locally. Use `git push` to send them to GitHub." },
+                { "text": "Branches allow multiple people to work on different features.", "answer": true, "hint": "They keep work isolated.", "explanation": "Each branch can represent a different feature or fix." },
+                { "text": "Git and GitHub are the same thing.", "answer": false, "hint": "One is a tool, the other is a platform.", "explanation": "Git is a version control tool, while GitHub is a hosting service for Git repositories." },
+                { "text": "Git tracks changes to images, videos, and text files.", "answer": true, "hint": "Any file can be tracked.", "explanation": "Git can version any file type, though it's optimized for text/code." },
+                { "text": "Every Git project has only one branch.", "answer": false, "hint": "Projects often have many branches.", "explanation": "You can create multiple branches for features, fixes, and testing." },
+                { "text": "You need to stage files with `git add` before committing.", "answer": true, "hint": "It's a two-step process.", "explanation": "Files must be staged before they can be committed." },
+                { "text": "You can undo changes in Git.", "answer": true, "hint": "Git keeps a history.", "explanation": "Git allows you to revert or reset changes." }
+            ]
+        },
+        {
+            "label": "Matching Quiz",
+            "type": "match",
+            "questions": [
+                {
+                    "pairs": [
+                        { "term": "Repository", "match": "A folder tracked by Git" },
+                        { "term": "Commit", "match": "A saved snapshot" },
+                        { "term": "Branch", "match": "A parallel version of the project" },
+                        { "term": "Push", "match": "Send commits to a remote repository" },
+                        { "term": "Clone", "match": "Create a local copy of a remote repository" },
+                        { "term": "Pull", "match": "Download changes from a remote repo" },
+                        { "term": "Init", "match": "Initialize a new repository" },
+                        { "term": "Status", "match": "Show changes in the working directory" },
+                        { "term": "Log", "match": "View commit history" },
+                        { "term": "Merge", "match": "Combine changes from different branches" }
+                    ],
+                    "hint": "Match each Git concept with its description.",
+                    "explanation": "These terms represent the core actions and elements in Git."
+                }
+            ]
+        },
+        {
+            "label": "Fill in the Blank Quiz",
+            "type": "fill",
+            "questions": [
+                { "text": "Git is a ____ control system.", "answer": "version", "hint": "Think 'version control'.", "explanation": "Version control systems manage changes to source code over time." },
+                { "text": "The command to create a Git repository is `git ____`.", "answer": "init", "hint": "Short for 'initialize'.", "explanation": "`git init` sets up a new repository." },
+                { "text": "The command to stage changes is `git ____`.", "answer": "add", "hint": "Prepares files for commit.", "explanation": "`git add` stages files for the next commit." },
+                { "text": "To save staged changes, use `git ____`.", "answer": "commit", "hint": "Think journal entry.", "explanation": "A commit records your work with a message." },
+                { "text": "To send your code to GitHub, use `git ____`.", "answer": "push", "hint": "Think upload.", "explanation": "`git push` sends your local commits to the remote repository." },
+                { "text": "You can check the status of your files with `git ____`.", "answer": "status", "hint": "Gives you a snapshot of what's changed.", "explanation": "`git status` shows tracked, untracked, and staged files." },
+                { "text": "To view previous commits, use `git ____`.", "answer": "log", "hint": "Think history.", "explanation": "`git log` displays a timeline of past commits." },
+                { "text": "A Git ____ is like a parallel universe of your project.", "answer": "branch", "hint": "It allows you to work on features safely.", "explanation": "Branches let you isolate work until it's ready to merge." },
+                { "text": "Git saves a ____ of your project at each commit.", "answer": "snapshot", "hint": "Think photo.", "explanation": "Each commit is a snapshot of your files." },
+                { "text": "Git helps developers ____ on the same code.", "answer": "collaborate", "hint": "Work together.", "explanation": "Git is designed for collaborative development." }
+            ]
+        }
+    ],
+    "review_prompt": "Think of Git like a time machine for your code. Every change is a checkpoint."
+},
+
+  {
+    "id": 2,
+    "title": "Installing Git + CLI Basics",
+    "xp": 120,
+    "intro": "Let's learn how to install Git and use the terminal effectively.",
+    "explanation": "You’ll learn to verify Git installation, understand essential CLI commands, and navigate directories.",
+    "stages": [
+      {
+        "label": "Multiple Choice Quiz",
+        "type": "multiple",
+        "questions": [
+          {
+            "text": "Which command checks if Git is installed on your system?",
+            "options": ["git --version", "check git", "install git", "git status"],
+            "answer": "git --version",
+            "hint": "Use this command in the terminal to verify Git installation.",
+            "explanation": "`git --version` displays the current installed version of Git."
+          },
+          {
+            "text": "Which website can you download Git from?",
+            "options": ["git.com", "github.com", "git-scm.com", "gitinstaller.org"],
+            "answer": "git-scm.com",
+            "hint": "It's the official Git site.",
+            "explanation": "The official site to download Git is https://git-scm.com."
+          },
+          {
+            "text": "What does the command `cd` do in the terminal?",
+            "options": ["Clear screen", "Change directory", "Copy files", "Commit data"],
+            "answer": "Change directory",
+            "hint": "It's how you move between folders in the terminal.",
+            "explanation": "`cd` stands for 'change directory'."
+          },
+          {
+            "text": "What does `pwd` show in the terminal?",
+            "options": ["Password", "Print working directory", "Print window details", "Post write data"],
+            "answer": "Print working directory",
+            "hint": "It shows where you are.",
+            "explanation": "`pwd` stands for 'print working directory'—your current location in the file system."
+          },
+          {
+            "text": "Which command moves you up one directory?",
+            "options": ["cd ..", "cd /", "cd back", "cd ~"],
+            "answer": "cd ..",
+            "hint": "The double dot means 'up'.",
+            "explanation": "`cd ..` moves you up to the parent folder."
+          },
+          {
+            "text": "Which terminal command clears the screen?",
+            "options": ["cls", "clear", "reset", "wipe"],
+            "answer": "clear",
+            "hint": "It's often used in Unix-based systems.",
+            "explanation": "`clear` removes all previous output from view."
+          },
+          {
+            "text": "What does the command `mkdir` do?",
+            "options": ["Make a directory", "Move files", "Mark files", "Modify permissions"],
+            "answer": "Make a directory",
+            "hint": "You use it to create a new folder.",
+            "explanation": "`mkdir` creates a new folder in the terminal."
+          },
+          {
+            "text": "Which command allows you to view manual pages for other commands?",
+            "options": ["man", "help", "info", "manual"],
+            "answer": "man",
+            "hint": "Short for manual.",
+            "explanation": "The `man` command displays a manual or help page for terminal commands."
+          },
+          {
+            "text": "What does `ls -a` show that `ls` doesn't?",
+            "options": ["Admin files", "All files, including hidden", "ASCII content", "Application data"],
+            "answer": "All files, including hidden",
+            "hint": "The `-a` flag stands for 'all'.",
+            "explanation": "`ls -a` shows hidden files (those starting with a dot)."
+          },
+          {
+            "text": "Which command opens the current folder in the default file explorer (on macOS)?",
+            "options": ["open .", "explorer .", "start .", "launch ."],
+            "answer": "open .",
+            "hint": "macOS only.",
+            "explanation": "`open .` opens the current directory in Finder on macOS."
+          }
+        ]
+      },
+      {
+        "label": "True or False Quiz",
+        "type": "truefalse",
+        "questions": [
+          {
+            "text": "Git requires an internet connection to be installed.",
+            "answer": false,
+            "hint": "Can you install it offline?",
+            "explanation": "Git can be installed via downloadable packages and doesn't need an internet connection once downloaded."
+          },
+          {
+            "text": "Using the terminal is optional when working with Git.",
+            "answer": true,
+            "hint": "There are apps with graphical interfaces too.",
+            "explanation": "While the terminal is powerful, tools like GitHub Desktop or VS Code let you use Git graphically."
+          },
+          {
+            "text": "You can navigate to your desktop using `cd Desktop`.",
+            "answer": true,
+            "hint": "It depends on your current directory.",
+            "explanation": "`cd Desktop` works if Desktop is a subfolder in your current location."
+          },
+          {
+            "text": "The terminal command `cd..` is correct syntax to move up a directory.",
+            "answer": false,
+            "hint": "Check spacing.",
+            "explanation": "The correct command is `cd ..` with a space between `cd` and `..`."
+          },
+          {
+            "text": "Git can be used from both the terminal and GUI tools.",
+            "answer": true,
+            "hint": "Flexibility is a strength of Git.",
+            "explanation": "You can use Git via command line or visual tools like VS Code."
+          },
+          {
+            "text": "The terminal command `ls` works the same on Windows and Mac.",
+            "answer": false,
+            "hint": "Windows uses a different shell by default.",
+            "explanation": "`ls` is Unix-based; Windows uses `dir` unless using WSL or Git Bash."
+          },
+          {
+            "text": "Git Bash is a Windows tool that provides Unix-like terminal features.",
+            "answer": true,
+            "hint": "It's bundled with the Git installer on Windows.",
+            "explanation": "Git Bash allows Windows users to run Unix commands."
+          },
+          {
+            "text": "The `man` command is available in Git Bash by default.",
+            "answer": false,
+            "hint": "Try typing `man` in Git Bash.",
+            "explanation": "`man` often isn’t available in Git Bash unless configured manually."
+          },
+          {
+            "text": "You can use the tab key to auto-complete file and folder names in the terminal.",
+            "answer": true,
+            "hint": "Try it — it's a time-saver!",
+            "explanation": "Pressing tab helps autocomplete file names, reducing errors."
+          },
+          {
+            "text": "The terminal and command line are exactly the same.",
+            "answer": false,
+            "hint": "One is an interface; the other is a concept.",
+            "explanation": "The terminal is a tool for accessing the command line — they're related but not identical."
+          }
+        ]
+      },
+      {
+        "label": "Matching Quiz",
+        "type": "match",
+        "questions": [
+          {
+            "pairs": [
+              { "term": "ls", "match": "List files" },
+              { "term": "pwd", "match": "Show current directory" },
+              { "term": "cd", "match": "Change directory" },
+              { "term": "mkdir", "match": "Create a directory" },
+              { "term": "clear", "match": "Wipe terminal screen" },
+              { "term": "man", "match": "Show manual/help page" },
+              { "term": "touch", "match": "Create a file" },
+              { "term": "git --version", "match": "Check Git installation" },
+              { "term": "cd ..", "match": "Move up one directory" },
+              { "term": "open .", "match": "Open folder in Finder (macOS)" }
+            ],
+            "hint": "Match each command to what it does.",
+            "explanation": "These are common terminal commands every Git user should know."
+          }
+        ]
+      },
+      {
+        "label": "Fill in the Blank Quiz",
+        "type": "fill",
+        "questions": [
+          { "text": "To check Git's version, type: ____ --version", "answer": "git", "hint": "It's the name of the tool you're checking.", "explanation": "Typing `git --version` checks Git's installation." },
+          { "text": "The command to list files in the current directory is ____.", "answer": "ls", "hint": "Two lowercase letters.", "explanation": "`ls` lists files in the current folder." },
+          { "text": "To create a folder via terminal, use: ____ foldername", "answer": "mkdir", "hint": "Think 'make directory'.", "explanation": "`mkdir` creates a folder." },
+          { "text": "To clear the terminal screen, type ____.", "answer": "clear", "hint": "It makes the terminal look empty.", "explanation": "`clear` wipes visible output." },
+          { "text": "To move up a directory, use: cd ____", "answer": "..", "hint": "Double dot.", "explanation": "`cd ..` moves up to the parent folder." },
+          { "text": "To show the current directory path, type ____.", "answer": "pwd", "hint": "Three lowercase letters.", "explanation": "`pwd` = Print Working Directory." },
+          { "text": "To display help information about a command, type ____ command", "answer": "man", "hint": "Short for 'manual'.", "explanation": "`man` shows help docs." },
+          { "text": "To change directories, use the command ____ foldername", "answer": "cd", "hint": "Short and essential.", "explanation": "`cd` changes directory." },
+          { "text": "To open a file explorer window in the current folder on macOS, type ____ .", "answer": "open", "hint": "This command is Mac-specific.", "explanation": "`open .` launches Finder." },
+          { "text": "To create a text file using terminal (Linux/mac), you can use: ____ filename.txt", "answer": "touch", "hint": "Think about 'touching' a file.", "explanation": "`touch` creates an empty file." }
+        ]
+      }
+    ],
+    "review_prompt": "The terminal is your command center. Get comfortable with navigating and running Git commands!"
+  }
+  
+]

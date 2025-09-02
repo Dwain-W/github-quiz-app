@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "title": "What is Git?",
+    "xp": 100,
+    "intro": "Welcome to the Git basics lesson.",
+    "explanation": "Git helps developers track and collaborate on code changes.",
+    "stages": [
+      {
+        "label": "Full Quiz",
+        "type": "mixed",
+        "questions": [
+          {
+            "type": "multiple",
+            "text": "What is Git?",
+            "options": [
+              "A programming language",
+              "A version control system",
+              "A design tool",
+              "An operating system"
+            ],
+            "answer": "A version control system",
+            "hint": "It's used to track changes in code.",
+            "explanation": "Git is a version control system that helps you manage and track changes to code over time."
+          },
+          {
+            "type": "multiple",
+            "text": "Why is Git useful for developers?",
+            "options": [
+              "It sends emails",
+              "It tracks changes in code",
+              "It optimizes performance",
+              "It runs your application"
+            ],
+            "answer": "It tracks changes in code",
+            "hint": "Developers need to manage versions of their code.",
+            "explanation": "Git tracks versions of your files, so you can go back to earlier code and collaborate safely."
+          },
+          {
+            "type": "truefalse",
+            "text": "Git was created by the same person who created Linux.",
+            "options": [
+              true,
+              false
+            ],
+            "answer": true,
+            "hint": "His name is Linus Torvalds.",
+            "explanation": "Linus Torvalds, the creator of Linux, also created Git in 2005."
+          },
+          {
+            "type": "multiple",
+            "text": "Which of the following is NOT true about Git?",
+            "options": [
+              "It's distributed",
+              "It’s used to collaborate",
+              "It requires an internet connection to work",
+              "It tracks changes"
+            ],
+            "answer": "It requires an internet connection to work",
+            "hint": "Git works offline!",
+            "explanation": "Git works locally — you don’t need to be online to use it."
+          },
+          {
+            "type": "fill",
+            "text": "Git is a ____ control system.",
+            "answer": "version",
+            "hint": "Think 'version control' — it manages different versions of your project.",
+            "explanation": "Version control systems manage changes to source code over time."
+          },
+          {
+            "type": "match",
+            "text": "Match the Git concept to its description.",
+            "pairs": {
+              "Repository": "A folder tracked by Git",
+              "Commit": "A saved snapshot",
+              "Branch": "A parallel version of the project"
+            },
+            "hint": "Think of commits as save points in a video game.",
+            "explanation": "Repositories hold your project, commits track history, and branches allow different lines of work."
+          },
+          {
+            "type": "multiple",
+            "text": "Which of the following is a Git command?",
+            "options": [
+              "save-project",
+              "git init",
+              "project start",
+              "create-repo"
+            ],
+            "answer": "git init",
+            "hint": "Git commands usually start with 'git'.",
+            "explanation": "`git init` creates a new Git repository in your current folder."
+          },
+          {
+            "type": "fill",
+            "text": "The command to create a new Git repository is `git ____`.",
+            "answer": "init",
+            "hint": "It's short for 'initialize'.",
+            "explanation": "`git init` sets up a new Git repo in the current folder."
+          },
+          {
+            "type": "multiple",
+            "text": "What does a Git commit do?",
+            "options": [
+              "Deletes a file",
+              "Saves changes with a message",
+              "Uploads to the internet",
+              "Formats the code"
+            ],
+            "answer": "Saves changes with a message",
+            "hint": "Think of it like saving your game.",
+            "explanation": "A commit saves your current work and includes a message describing the change."
+          },
+          {
+            "type": "truefalse",
+            "text": "Git can help teams of developers work on the same project at the same time without overwriting each other’s work.",
+            "options": [
+              true,
+              false
+            ],
+            "answer": true,
+            "hint": "Branches help teams work in parallel.",
+            "explanation": "Git lets developers work on separate branches, preventing conflicts until changes are merged."
+          }
+        ],
+         "review_prompt": "Think of Git like a time machine for your code. Every change is a checkpoint."
+      }
+    ]
+  }
+]
