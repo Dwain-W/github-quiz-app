@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState, useEffect } from "react";
+import { useScore } from "../../state/ScoreContext";
 
 function ProgressBar({ value, max }) {
   const pct = Math.round((value / max) * 100);
@@ -10,13 +11,21 @@ function ProgressBar({ value, max }) {
   );
 }
 
-export default function MultipleChoice({ questions = [], onComplete }) {
+export default function MultipleChoice({ questions = [], onComplete, lessonId = "lesson-0" }) {
   const total = questions.length;
   const [index, setIndex] = useState(0);
-  const [selected, setSelected] = useState(null);       // number (option index)
+  const [selected, setSelected] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [score, setScore] = useState(0);
+
+  const startRef = useRef(Date.now());
+  const { actions } = useScore();
+
+  useEffect(() => {
+    // reset timer on question change
+    startRef.current = Date.now();
+  }, [index]);
 
   const q = questions[index];
   const answerIndex = useMemo(() => q ? q.options.findIndex(o => o === q.answer) : -1, [q]);
@@ -26,12 +35,19 @@ export default function MultipleChoice({ questions = [], onComplete }) {
   const isCorrect = submitted && selected === answerIndex;
 
   const handleSubmit = () => {
-    if (selected == null) return;
+    if (selected == null && !submitted) return;
+
     if (!submitted) {
+      // First submit => judge + award XP
       setSubmitted(true);
-      if (selected === answerIndex) setScore(s => s + 1);
+      const correct = selected === answerIndex;
+      if (correct) setScore(s => s + 1);
+
+      const timeMs = Date.now() - startRef.current;
+      const difficulty = Number(q.difficulty || 1);
+      actions.award({ correct, difficulty, timeMs, lessonId });
     } else {
-      // Next question
+      // Go next or finish
       const next = index + 1;
       if (next < total) {
         setIndex(next);
@@ -39,7 +55,7 @@ export default function MultipleChoice({ questions = [], onComplete }) {
         setSubmitted(false);
         setShowHint(false);
       } else {
-        // Finished
+        actions.completeQuiz();
         if (onComplete) onComplete({ score, total });
       }
     }
@@ -57,11 +73,7 @@ export default function MultipleChoice({ questions = [], onComplete }) {
 
       <h2 className="quiz-question">{q.text}</h2>
 
-      <form
-        className="quiz-options"
-        onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}
-        aria-label="Answer choices"
-      >
+      <form className="quiz-options" onSubmit={(e) => { e.preventDefault(); handleSubmit(); }} aria-label="Answer choices">
         {q.options.map((opt, i) => {
           const isSelected = selected === i;
           const isAnswer = i === answerIndex;
@@ -71,20 +83,21 @@ export default function MultipleChoice({ questions = [], onComplete }) {
               ? (isAnswer ? "correct" : (isSelected ? "wrong" : ""))
               : (isSelected ? "selected" : "");
 
-        return (
-          <label key={i} className={`quiz-option ${stateClass}`}>
-            <input
-              type="radio"
-              name={`q-${index}`}
-              value={opt}
-              checked={isSelected}
-              onChange={() => setSelected(i)}
-              disabled={submitted}
-            />
-            <span className="quiz-option__marker" aria-hidden="true" />
-            <span className="quiz-option__text">{opt}</span>
-          </label>
-        );})}
+          return (
+            <label key={i} className={`quiz-option ${stateClass}`}>
+              <input
+                type="radio"
+                name={`q-${index}`}
+                value={opt}
+                checked={isSelected}
+                onChange={() => setSelected(i)}
+                disabled={submitted}
+              />
+              <span className="quiz-option__marker" aria-hidden="true" />
+              <span className="quiz-option__text">{opt}</span>
+            </label>
+          );
+        })}
       </form>
 
       <div className="quiz-actions">
@@ -113,7 +126,7 @@ export default function MultipleChoice({ questions = [], onComplete }) {
             {isCorrect ? "Correct ✅" : "Not quite ❌"}
           </div>
           {q.explanation && <p className="quiz-feedback__body">{q.explanation}</p>}
-          <div className="quiz-score">Score: {score} / {total}</div>
+          <div className="quiz-score">Score in this set: {score} / {total}</div>
         </div>
       )}
     </div>

@@ -1,0 +1,15 @@
+.stage-nav{
+  display:flex; gap:8px; flex-wrap:wrap; margin: 6px 0 2px;
+}
+.stage-chip{
+  padding:6px 10px; border:1px solid var(--border); border-radius:999px;
+  background:#0f1115; color:var(--muted); cursor:pointer;
+}
+.stage-chip.active{ color:#fff; outline:2px solid var(--ring); }
+.stage-chip:hover{ color:#eaeaea; }
+
+.stage-header{
+  display:flex; align-items:center; justify-content:space-between;
+  margin: 6px 0 8px;
+}
+.stage-title{ font-weight:700; }
